@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.cat {
+  max-width: 64px;
+  image-rendering: pixelated;
+}
+
+.play-btn {
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+.piano {
+  overflow: scroll;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.piano__key {
+  flex-shrink: 0;
+  width: 32px;
+  height: 128px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.25s ease-out;
+}
+
+.piano__key--sharp {
+  background: black;
+  color: white;
+  height: 96px;
+  width: 24px;
+  margin-left: -12px;
+  margin-right: -12px;
+  z-index: 99;
+}
+
+.piano__key::selection {
+  background: transparent;
+}
+
+.piano__key:active {
+  cursor: none;
+  background: violet;
+}
+
+.piano__key--lh-active {
+  cursor: none;
+  background: lightgreen;
+}
+
+.piano__key--rh-active {
+  cursor: none;
+  background: skyblue;
+}
+
+label,
+input {
+  padding: 10px;
+  font-size: 24px;
+}
