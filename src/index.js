@@ -6,20 +6,23 @@ import p5 from 'p5';
 import Point from './Point';
 import Line from './Line';
 import notes from './notes';
-
 // utils
 const bpmToFps = (bpm) => Number((bpm / 60).toFixed(1));
 
+// doc root
 const root = document.getElementById('root');
-
 root.innerHTML = `p5 with tone random music`;
 
+// global state
 const state = {
   prevNote: null,
   isPlaying: false,
+  bpm: bpmToFps(160),
 };
 
+// object points, new Point
 const points = [];
+// array for random colors
 const colors = [
   'skyblue',
   'magenta',
@@ -32,7 +35,7 @@ const colors = [
 const sketch = (s) => {
   s.setup = () => {
     s.createCanvas(window.innerWidth * 0.9, window.innerHeight * 0.9);
-    s.frameRate(bpmToFps(160));
+    s.frameRate(state.bpm);
 
     notes.forEach((note) => {
       let point = new Point(
