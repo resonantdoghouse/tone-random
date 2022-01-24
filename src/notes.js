@@ -1,42 +1,11 @@
-export default [
-  'c0',
-  'eb0',
-  'f0',
-  'g0',
-  'bb0',
-  'c1',
-  'eb1',
-  'f1',
-  'g1',
-  'bb1',
-  'c2',
-  'eb2',
-  'f2',
-  'g2',
-  'bb2',
-  'c3',
-  'eb3',
-  'f3',
-  'g3',
-  'bb3',
-  'c4',
-  'eb4',
-  'f4',
-  'g4',
-  'bb4',
-  'c4',
-  'eb4',
-  'f4',
-  'g4',
-  'bb4',
-  'c5',
-  'eb5',
-  'f5',
-  'g5',
-  'bb5',
-  'c6',
-  'eb6',
-  'f6',
-  'g6',
-  'bb6',
-];
+const generateNotesArray = (numOctaves) => {
+  const notes = [];
+  for (let i = 0; i < numOctaves; i++) {
+    notes.push(`c${i}`, `eb${i}`, `f${i}`, `g${i}`, `bb${i}`);
+  }
+  return notes;
+};
+
+const notes = generateNotesArray(8);
+
+export default notes;
